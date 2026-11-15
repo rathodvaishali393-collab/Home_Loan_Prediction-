@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About the ML Model | HomeLoan ML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">⌂</div>
+        <div class="brand-text"><span class="brand-title">HomeLoan ML</span><span class="brand-subtitle">ELIGIBILITY
+            PREDICTION</span></div>
+      </a>
+      <nav class="main-nav">
+
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'prediction' %}">Prediction</a>
+        <a href="{% url 'about' %}">About ML</a>
+      </nav>
+      <div class="header-actions"><a href="eligibility-check.html" class="btn btn-primary">Try Model</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <div class="about-badge">ABOUT THE PROJECT</div>
+        <h1>Home Loan Eligibility Prediction Using Machine Learning</h1>
+        <p>This college project demonstrates an end-to-end classification workflow that predicts whether a home-loan
+          application is likely to be approved based on applicant and loan attributes.</p>
+      </div>
+    </section>
+
+    <section class="mission-section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-content">
+            <div class="section-label">PROJECT OBJECTIVE</div>
+            <h2>Turn Loan Data into a Prediction</h2>
+            <p>The model uses the loan dataset supplied with this project and predicts the Loan_Status target. The web
+              form sends applicant information to a local Python Flask backend.</p>
+            <p>The current dataset file contains 5 sample records. Because of this, the present version should be
+              treated as a demonstration of the ML pipeline rather than a reliable real-world banking model.</p>
+            <a href="eligibility-check.html" class="btn btn-primary btn-arrow">Test the Prediction <span>→</span></a>
+          </div>
+          <div class="mission-stats">
+            <div class="stat-box">
+              <div class="stat-number">RF</div>
+              <div class="stat-title">ALGORITHM</div>
+              <div class="stat-subtitle">Random Forest Classifier</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">13</div>
+              <div class="stat-title">COLUMNS</div>
+              <div class="stat-subtitle">Including Loan_Status target</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">5</div>
+              <div class="stat-title">CURRENT ROWS</div>
+              <div class="stat-subtitle">Sample dataset supplied</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">Y/N</div>
+              <div class="stat-title">TARGET</div>
+              <div class="stat-subtitle">Loan status classification</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="technology-section">
+      <div class="container">
+        <h2 class="tech-title">Technology Stack</h2>
+        <p class="tech-subtitle">The project connects a Python ML backend with the existing light-theme web interface.
+        </p>
+        <div class="tech-stack-grid">
+          <div class="tech-stack-card python">
+            <div class="tech-icon">🐍</div>
+            <h3>Python</h3>
+            <p class="tech-desc">Model training and prediction API</p>
+            <p class="tech-libs"><strong>Libraries:</strong> Pandas, Scikit-learn, Flask</p>
+          </div>
+          <div class="tech-stack-card frontend">
+            <div class="tech-icon">🎨</div>
+            <h3>Frontend</h3>
+            <p class="tech-desc">Prediction form and result pages</p>
+            <p class="tech-libs"><strong>Technologies:</strong> HTML5, CSS3, JavaScript</p>
+          </div>
+          <div class="tech-stack-card ml">
+            <div class="tech-icon">🌲</div>
+            <h3>Machine Learning</h3>
+            <p class="tech-desc">Binary classification</p>
+            <p class="tech-libs"><strong>Algorithm:</strong> Random Forest Classifier</p>
+          </div>
+          <div class="tech-stack-card data">
+            <div class="tech-icon">📊</div>
+            <h3>Dataset</h3>
+            <p class="tech-desc">Loan application sample data</p>
+            <p class="tech-libs"><strong>Target:</strong> Loan_Status</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="model-features-section">
+      <div class="container">
+        <h2>Features Used for Prediction</h2>
+        <p class="section-desc">These input fields correspond to the supplied dataset.</p>
+        <div class="features-breakdown">
+          <div class="feature-category">
+            <h3 class="category-title">👤 Applicant</h3>
+            <ul class="feature-list">
+              <li>Gender</li>
+              <li>Married</li>
+              <li>Dependents</li>
+              <li>Education</li>
+              <li>Self Employed</li>
+            </ul>
+          </div>
+          <div class="feature-category">
+            <h3 class="category-title">💰 Financial</h3>
+            <ul class="feature-list">
+              <li>Applicant Income</li>
+              <li>Co-Applicant Income</li>
+              <li>Loan Amount</li>
+              <li>Loan Amount Term</li>
+            </ul>
+          </div>
+          <div class="feature-category">
+            <h3 class="category-title">🏠 Property & Credit</h3>
+            <ul class="feature-list">
+              <li>Credit History</li>
+              <li>Property Area</li>
+              <li>Loan Status target</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark small">⌂</div>
+        <div class="brand-title">HomeLoan ML</div>
+      </div>
+      <p>College project. Results are for educational demonstration only.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

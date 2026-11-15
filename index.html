@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loan Eligibility Prediction</title>
+  <meta name="description" content="Machine learning based home loan eligibility prediction project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Home Loan Eligibility Prediction">
+        <div class="brand-mark">⌂</div>
+        <div class="brand-text">
+          <span class="brand-title">HomeLoan ML</span>
+          <span class="brand-subtitle">ELIGIBILITY PREDICTION</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'prediction' %}">Prediction</a>
+        <a href="{% url 'about' %}">About ML</a>
+      </nav>
+      <div class="header-actions">
+        <a href="{% url 'prediction' %}" class="btn btn-success">
+          Check Eligibility
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="badge">MACHINE LEARNING PROJECT</div>
+          <h1>Predict Your <span>Home Loan</span> Eligibility</h1>
+          <p>
+            Enter applicant, income, loan and credit details to get a home-loan
+            eligibility prediction from a Random Forest classification model.
+          </p>
+          <div class="hero-actions">
+            <a href="{% url 'prediction' %}" class="btn btn-success">Check Eligibility</a>
+            <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+          </div>
+        </div>
+
+        <div class="hero-stats" aria-label="Project information">
+          <div class="stat-card small">
+            <div class="stat-icon">🤖</div>
+            <div class="stat-number">RF</div>
+            <div class="stat-label">ML Algorithm</div>
+          </div>
+          <div class="stat-card small">
+            <div class="stat-icon">📊</div>
+            <div class="stat-number">13</div>
+            <div class="stat-label">Dataset Columns</div>
+          </div>
+          <div class="stat-card small">
+            <div class="stat-icon">🏠</div>
+            <div class="stat-number">Y / N</div>
+            <div class="stat-label">Loan Status</div>
+          </div>
+          <div class="stat-card small">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number">Local</div>
+            <div class="stat-label">Runs on Your PC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+      <div class="container section-wrap">
+        <h2>How the Prediction Works</h2>
+        <p class="section-subtitle">A simple end-to-end machine learning workflow for home loan eligibility.</p>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-icon">📝</div>
+            <div class="step-number">01</div>
+            <h3>Enter Details</h3>
+            <p>Provide the same personal, financial and credit fields used by the loan dataset.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">⚙️</div>
+            <div class="step-number">02</div>
+            <h3>Preprocess Data</h3>
+            <p>Categorical values are encoded and missing values are handled before prediction.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">🌲</div>
+            <div class="step-number">03</div>
+            <h3>Random Forest</h3>
+            <p>The trained classification model evaluates the applicant profile.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">✅</div>
+            <div class="step-number">04</div>
+            <h3>Get Result</h3>
+            <p>The application displays Eligible or Not Eligible with model probability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container stats-grid">
+        <div class="metric">
+          <div class="metric-label">Problem Type</div>
+          <div class="metric-value">Classification</div>
+          <div class="metric-note">Binary prediction</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Algorithm</div>
+          <div class="metric-value">Random Forest</div>
+          <div class="metric-note">Scikit-learn</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Target</div>
+          <div class="metric-value">Loan Status</div>
+          <div class="metric-note">Y = Eligible, N = Not Eligible</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Purpose</div>
+          <div class="metric-value">Home Loan</div>
+          <div class="metric-note">Educational prediction</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="eligibility-section">
+      <div class="container eligibility-wrap">
+        <div class="form-card" style="text-align:center">
+          <div class="card-header" style="justify-content:center"><span class="card-icon">🏠</span><span>Ready to Test
+              the Model?</span></div>
+          <p>Open the prediction form and enter an applicant profile.</p>
+          <a href="{% url 'prediction' %}" class="btn btn-primary">Open Prediction Form →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark small">⌂</div>
+        <div class="brand-title">HomeLoan ML</div>
+      </div>
+      <p>College machine learning project. Prediction is for educational use only.</p>
+      <div class="footer-links"><a href="{% url 'about' %}">About</a></div>
+    </div>
+  </footer>
+</body>
+
+</html>
